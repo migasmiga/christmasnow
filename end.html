@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        @keyframes fall {
+  to {
+    transform: translateY(300px);
+  }
+}
+
+body {
+  background-color: #f1faee;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  display: flex;
+}
+.snowball {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.ball {
+  background-color: #bde0fe;
+  border: 8px solid #003049;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 10px 10px #fff;
+}
+.holder {
+  background-color: #2a9d8f;
+  border: 8px solid #003049;
+  border-radius: 20px 20px 0 0;
+  width: 250px;
+  height: 55px;
+  position: absolute;
+  top: 308px;
+  left: 25px;
+}
+.holder:before {
+  content: "";
+  background-color: #003049;
+  width: 500px;
+  height: 8px;
+  position: absolute;
+  top: 55px;
+  left: -130px;
+}
+.tree {
+  background-color: #003049;
+  width: 8px;
+  height: 40px;
+  position: absolute;
+  top: 270px;
+  left: 145px;
+}
+.tree:before {
+  content: "";
+  border-bottom: 120px solid #003049;
+  border-left: 75px solid #0000;
+  border-right: 75px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -120px;
+  left: -70px;
+}
+.tree:after {
+  content: "";
+  border-bottom: 95px solid #386641;
+  border-left: 60px solid #0000;
+  border-right: 60px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -103px;
+  left: -55px;
+}
+.tree1 {
+  z-index: 1;
+  border-bottom: 120px solid #003049;
+  border-left: 75px solid #0000;
+  border-right: 75px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -160px;
+  left: -70px;
+}
+.tree1:before {
+  content: "";
+  border-bottom: 95px solid #6a994e;
+  border-left: 60px solid #0000;
+  border-right: 60px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 17px;
+  left: -60px;
+}
+.tree2 {
+  z-index: 2;
+  border-bottom: 110px solid #003049;
+  border-left: 65px solid #0000;
+  border-right: 65px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -200px;
+  left: -60px;
+}
+.tree2:before {
+  content: "";
+  border-bottom: 85px solid #386641;
+  border-left: 50px solid #0000;
+  border-right: 50px solid #0000;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 17px;
+  left: -50px;
+}
+.snow {
+  z-index: 5;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  top: -119px;
+  left: -30px;
+}
+.snow:before {
+  content: "";
+  z-index: 5;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+}
+.snow:after {
+  content: "";
+  z-index: 5;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  top: 90px;
+  left: 10px;
+}
+.balls {
+  z-index: 10;
+  background-color: #d90429;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -100px;
+}
+.balls:before {
+  content: "";
+  background-color: #118ab2;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -50px;
+  left: 15px;
+}
+.balls:after {
+  content: "";
+  background-color: #8338ec;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50px;
+  left: -55px;
+}
+.balls1 {
+  z-index: 10;
+  background-color: #ff006e;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -160px;
+  left: -30px;
+}
+.balls1:before {
+  content: "";
+  background-color: #fb5607;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 100px;
+  left: 55px;
+}
+.balls1:after {
+  content: "";
+  background-color: #ffbe0b;
+  border: 4px solid #003049;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 75px;
+  left: -25px;
+}
+.star1 {
+  z-index: 3;
+  border-bottom: 31.85px solid #003049;
+  border-left: 45.5px solid #0000;
+  border-right: 45.5px solid #0000;
+  width: 0;
+  height: 0;
+  margin: 50px 0;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 107.5px;
+  transform: rotate(35deg);
+}
+.star1:before {
+  content: "";
+  border-bottom: 36.4px solid #003049;
+  border-left: 12.85px solid #0000;
+  border-right: 12.95px solid #0000;
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: -22.75px;
+  left: -31.85px;
+  transform: rotate(-35deg);
+}
+.star1:after {
+  content: "";
+  border-bottom: 31.85px solid #003049;
+  border-left: 45.5px solid #0000;
+  border-right: 45.5px solid #0000;
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: 1.365px;
+  left: -48.37px;
+  transform: rotate(-70deg);
+}
+.star {
+  z-index: 4;
+  border-bottom: 17.5px solid #ffbe0b;
+  border-left: 25px solid #0000;
+  border-right: 25px solid #0000;
+  width: 0;
+  height: 0;
+  margin: 50px 0;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 126px;
+  transform: rotate(35deg);
+}
+.star:before {
+  content: "";
+  border-bottom: 20px solid #ffbe0b;
+  border-left: 7.5px solid #0000;
+  border-right: 7.5px solid #0000;
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: -12.5px;
+  left: -17.5px;
+  transform: rotate(-35deg);
+}
+.star:after {
+  content: "";
+  border-bottom: 17.5px solid #ffbe0b;
+  border-left: 25px solid #0000;
+  border-right: 25px solid #0000;
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: 0.75px;
+  left: -26.25px;
+  transform: rotate(-70deg);
+}
+.text {
+  text-shadow: 1px 1px 1px #fff, 1.5px 1.5px 0.6px #fff;
+  color: #ef233c;
+  font-family: Brush Script MT, cursive;
+  font-size: 35px;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+.fall {
+  z-index: 15;
+  position: absolute;
+}
+.snowFlakes1,
+.snowFlakes2,
+.snowFlakes3,
+.snowFlakes4,
+.snowFlakes5,
+.snowFlakes6,
+.snowFlakes7,
+.snowFlakes8,
+.snowFlakes9,
+.snowFlakes10 {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.snowFlakes1 {
+  animation: 7s linear infinite fall;
+  top: 10px;
+  left: 80px;
+}
+.snowFlakes2 {
+  animation: 5s linear infinite fall;
+  top: 10px;
+  left: 140px;
+  transform: scale(2.2);
+}
+.snowFlakes3 {
+  animation: 5s linear infinite fall;
+  top: 10px;
+  left: 70px;
+}
+.snowFlakes4 {
+  animation: 9s linear infinite fall;
+  top: 10px;
+  left: 40px;
+  transform: scale(1.8);
+}
+.snowFlakes5 {
+  animation: 9.5s linear infinite fall;
+  top: 10px;
+  left: 190px;
+}
+.snowFlakes6 {
+  animation: 4s linear infinite fall;
+  top: 10px;
+  left: 220px;
+}
+.snowFlakes7 {
+  animation: 13s linear infinite fall;
+  top: 10px;
+  left: 250px;
+  transform: scale(2);
+}
+.snowFlakes8 {
+  animation: 3s linear infinite fall;
+  top: 10px;
+  left: 30px;
+}
+.snowFlakes9 {
+  animation: 7s linear infinite fall;
+  top: 10px;
+  left: 130px;
+}
+.snowFlakes10 {
+  animation: 5s linear infinite fall;
+  top: 10px;
+  left: 230px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="snowball">
+        <div class="ball">
+          <div class="fall">
+            <div class="snowFlakes1"></div>
+            <div class="snowFlakes2"></div>
+            <div class="snowFlakes3"></div>
+            <div class="snowFlakes4"></div>
+            <div class="snowFlakes5"></div>
+            <div class="snowFlakes6"></div>
+            <div class="snowFlakes7"></div>
+            <div class="snowFlakes8"></div>
+            <div class="snowFlakes9"></div>
+            <div class="snowFlakes10"></div>
+          </div>
+          <div class="tree">
+            <div class="tree1"></div>
+            <div class="tree2"></div>
+            <div class="snow"></div>
+            <div class="balls"></div>
+            <div class="balls1"></div>
+          </div>
+          <div class="star"></div>
+          <div class="star1"></div>
+        </div>
+        <div class="holder">
+          <div class="text">Merry Christmas!</div>
+        </div>
+      </div>
+</body>
+</html>
